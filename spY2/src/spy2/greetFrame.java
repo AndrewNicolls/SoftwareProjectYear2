@@ -33,6 +33,7 @@ public class greetFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
 
         usrChsCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrator", "Returning Student", "New Student" }));
 
@@ -63,7 +64,7 @@ public class greetFrame extends javax.swing.JFrame {
                 .addComponent(usrChsCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(greetOkBtn)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Welcome to EASE, please select your user type below");
@@ -72,19 +73,19 @@ public class greetFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(62, 62, 62))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -95,10 +96,16 @@ public class greetFrame extends javax.swing.JFrame {
             String chkUsrTyp = "" + usrChsCbx.getSelectedItem();
             switch (chkUsrTyp) {
                 case "Administrator":
+                    this.setVisible(false);
+                    new adminLoginFrame().setVisible(true);
                     break;
                 case "Returning Student":
+                    this.setVisible(false);
+                    new returningStudentLogin().setVisible(true);
                     break;
                 case "New Student":
+                    this.setVisible(false);
+                    new newStudentForm().setVisible(true);
                     break;
             }
         }
