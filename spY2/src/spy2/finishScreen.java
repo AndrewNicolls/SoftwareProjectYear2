@@ -43,7 +43,7 @@ public class finishScreen extends javax.swing.JFrame {
 
         completeLbl3.setText("and your sponsors email addresses.");
 
-        tickImgLbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\Andrew\\Documents\\SP\\Resources for applcation\\Green-Tick-Transparent-PNG1.png")); // NOI18N
+        tickImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/spy2/Green-Tick-Transparent-PNG1.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
