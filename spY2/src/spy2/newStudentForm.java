@@ -5,6 +5,13 @@
  */
 package spy2;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Andrew
@@ -58,9 +65,9 @@ public class newStudentForm extends javax.swing.JFrame {
         starLbl3 = new javax.swing.JLabel();
         starLbl1 = new javax.swing.JLabel();
         starLbl8 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        genderCbx = new javax.swing.JComboBox<>();
+        languageCbx = new javax.swing.JComboBox<>();
+        raceCbx = new javax.swing.JComboBox<>();
         starLbl10 = new javax.swing.JLabel();
         starLbl11 = new javax.swing.JLabel();
         starLbl12 = new javax.swing.JLabel();
@@ -74,9 +81,9 @@ public class newStudentForm extends javax.swing.JFrame {
         hNumLbl = new javax.swing.JLabel();
         starLbl5 = new javax.swing.JLabel();
         hNumTxf = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
+        nextBtn = new javax.swing.JButton();
+        zipTxf = new javax.swing.JTextField();
         starLbl14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,11 +142,11 @@ public class newStudentForm extends javax.swing.JFrame {
         starLbl8.setForeground(new java.awt.Color(255, 51, 0));
         starLbl8.setText("*");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        genderCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "English", "isiXhosa", "Afrikaans", "Portugese", "Spanish", "French", "Sotho", "Zulu", "Venda" }));
+        languageCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "English", "isiXhosa", "Afrikaans", "Portugese", "Spanish", "French", "Sotho", "Zulu", "Venda" }));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Black", "Coloured", "White", "Asian", "Indian", "other" }));
+        raceCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Black", "Coloured", "White", "Asian", "Indian", "other" }));
 
         starLbl10.setForeground(new java.awt.Color(255, 51, 0));
         starLbl10.setText("*");
@@ -167,9 +174,14 @@ public class newStudentForm extends javax.swing.JFrame {
         starLbl5.setForeground(new java.awt.Color(255, 51, 0));
         starLbl5.setText("*");
 
-        jButton1.setText("Back");
+        backBtn.setText("Back");
 
-        jButton2.setText("Next");
+        nextBtn.setText("Next");
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
 
         starLbl14.setForeground(new java.awt.Color(255, 51, 0));
         starLbl14.setText("*");
@@ -249,13 +261,13 @@ public class newStudentForm extends javax.swing.JFrame {
                                         .addComponent(starLbl14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(backBtn)
                                 .addGap(40, 40, 40)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addressTxf2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
+                                    .addComponent(nextBtn)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(hNumTxf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                                         .addComponent(intResRbutton, javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,10 +279,10 @@ public class newStudentForm extends javax.swing.JFrame {
                                         .addComponent(IDTxf, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(courseCbx, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(dobTxf, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, 167, Short.MAX_VALUE)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(raceCbx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(languageCbx, javax.swing.GroupLayout.Alignment.LEADING, 0, 167, Short.MAX_VALUE)
+                                        .addComponent(genderCbx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(zipTxf, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 137, Short.MAX_VALUE))
                             .addComponent(addressTxf1))))
                 .addGap(73, 73, 73))
@@ -336,17 +348,17 @@ public class newStudentForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(genderLbl)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(genderCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(starLbl10))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(langLbl)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(languageCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(starLbl11))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(raceLbl)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(raceCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(starLbl12))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -358,14 +370,14 @@ public class newStudentForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(zipLbl)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(zipTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(starLbl14))
                         .addGap(17, 55, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
+                            .addComponent(nextBtn)
+                            .addComponent(backBtn))
                         .addContainerGap())))
         );
 
@@ -387,6 +399,52 @@ public class newStudentForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+        if(evt.getSource()==nextBtn)
+        {
+            String nationality;
+            if(LresRbutton.isSelected())
+            {
+               nationality="South African"; 
+            }
+            else
+            {
+               nationality="Foreign";
+            }
+            
+            String course = (String) courseCbx.getSelectedItem();
+            String firstName = fNameTxf.getText();
+            String surname = sNameTxf.getText();
+            String dateOfReg = dorTxf.getText();
+            String homeNum = hNumTxf.getText();
+            String cellNum = cNumTxf.getText();
+            String email = emailTxf.getText();
+            String idNum = IDTxf.getText();
+            String dateOfBirth = dobTxf.getText();
+            String gender = (String) genderCbx.getSelectedItem();
+            String language = (String) languageCbx.getSelectedItem();
+            String race = (String) raceCbx.getSelectedItem();
+            String resAddress = addressTxf1.getText()+""+addressTxf2.getText();
+            String zip = zipTxf.getText();
+            
+            Connection connection;
+           try{
+             connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+             Statement st = connection.createStatement();
+             //The database needs to be updated with these other variables such as home number and date of registration
+            // st.executeUpdate("INSERT INTO `student`(`idStudent`,`firstName`,`lastName`"
+                   //  + ",`DOB`,`phoneNumber`,`zip`,`email`,`gender`,`nationality`,`IDnum`,"
+                    // + "`race`,`cellNum`,`resAddress`,`course`,`homeLang`,`Sponsor_idSponsor`)"
+                    // + "values('NEEDTOGENERATEIDHERE','"+firstName+"','"+surname+"','"+dateOfBirth+"','"+cellNum+"')");
+                    
+                    
+           }catch(SQLException ex){
+               Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+           }
+        }
+    }//GEN-LAST:event_nextBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,6 +488,7 @@ public class newStudentForm extends javax.swing.JFrame {
     private javax.swing.JLabel addressLbl;
     private javax.swing.JTextField addressTxf1;
     private javax.swing.JTextField addressTxf2;
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel cNumLbl;
     private javax.swing.JTextField cNumTxf;
     private javax.swing.JComboBox<String> courseCbx;
@@ -442,19 +501,17 @@ public class newStudentForm extends javax.swing.JFrame {
     private javax.swing.JTextField emailTxf;
     private javax.swing.JLabel fNameLbl;
     private javax.swing.JTextField fNameTxf;
+    private javax.swing.JComboBox<String> genderCbx;
     private javax.swing.JLabel genderLbl;
     private javax.swing.JLabel hNumLbl;
     private javax.swing.JTextField hNumTxf;
     private javax.swing.JLabel idLbl;
     private javax.swing.JRadioButton intResRbutton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel langLbl;
+    private javax.swing.JComboBox<String> languageCbx;
+    private javax.swing.JButton nextBtn;
+    private javax.swing.JComboBox<String> raceCbx;
     private javax.swing.JLabel raceLbl;
     private javax.swing.JLabel reminderLbl;
     private javax.swing.JLabel sNameLbl;
@@ -475,5 +532,6 @@ public class newStudentForm extends javax.swing.JFrame {
     private javax.swing.JLabel starLbl9;
     private javax.swing.JLabel studentInfoLbl;
     private javax.swing.JLabel zipLbl;
+    private javax.swing.JTextField zipTxf;
     // End of variables declaration//GEN-END:variables
 }
