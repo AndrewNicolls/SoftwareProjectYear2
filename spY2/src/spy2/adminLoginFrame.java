@@ -5,6 +5,16 @@
  */
 package spy2;
 
+import java.sql.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Andrew
@@ -16,6 +26,7 @@ public class adminLoginFrame extends javax.swing.JFrame {
      */
     public adminLoginFrame() {
         initComponents();
+
     }
 
     /**
@@ -28,21 +39,24 @@ public class adminLoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        empIDLbl = new javax.swing.JLabel();
+        passwordLbl = new javax.swing.JLabel();
+        empIDTxf = new javax.swing.JTextField();
+        loginButton = new javax.swing.JButton();
+        passwordTxf = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Employee ID");
+        empIDLbl.setText("Employee ID");
 
-        jLabel2.setText("Password");
+        passwordLbl.setText("Password");
 
-        jButton1.setText("Login");
-
-        jPasswordField2.setText("jPasswordField2");
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -51,13 +65,13 @@ public class adminLoginFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(empIDLbl)
+                    .addComponent(passwordLbl))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loginButton)
+                    .addComponent(empIDTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addComponent(passwordTxf))
                 .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -65,14 +79,14 @@ public class adminLoginFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(empIDLbl)
+                    .addComponent(empIDTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordLbl)
+                    .addComponent(passwordTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(loginButton)
                 .addContainerGap(122, Short.MAX_VALUE))
         );
 
@@ -91,6 +105,34 @@ public class adminLoginFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        // TODO add your handling code here:
+        if (evt.getSource() == loginButton) {
+            Connection connection;
+            PreparedStatement ps;
+            String sqlStatement = "SELECT * FROM `administrator` WHERE `idAdministrator`=? AND `password`=?" ;
+            
+            try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+            ps = (PreparedStatement) connection.prepareStatement(sqlStatement); 
+            ps.setString(1, empIDTxf.getText());
+            ps.setString(2, String.valueOf(passwordTxf.getPassword()));
+            ResultSet result = ps.executeQuery();
+             if(result.next()){
+                //TODO this will call the admin frame with the table to browse student information and search
+                JOptionPane.showMessageDialog(rootPane, "Correct Login");//This is temporary to simply show it is correctly identifying login matches
+            }
+            else{
+                final JPanel panel = new JPanel();
+                JOptionPane.showMessageDialog(panel, "Incorrect employee ID and password combination", "Login credential missmatch", JOptionPane.ERROR_MESSAGE);
+            }
+            } catch (SQLException ex) {
+                Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,16 +165,17 @@ public class adminLoginFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new adminLoginFrame().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel empIDLbl;
+    private javax.swing.JTextField empIDTxf;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JLabel passwordLbl;
+    private javax.swing.JPasswordField passwordTxf;
     // End of variables declaration//GEN-END:variables
 }
