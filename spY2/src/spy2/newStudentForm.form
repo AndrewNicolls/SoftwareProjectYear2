@@ -141,7 +141,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="backBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -149,7 +149,7 @@
                               <Component id="addressTxf2" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nextBtn" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="hNumTxf" alignment="0" pref="167" max="32767" attributes="0"/>
                                           <Component id="intResRbutton" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -161,11 +161,11 @@
                                           <Component id="IDTxf" alignment="0" max="32767" attributes="0"/>
                                           <Component id="courseCbx" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="dobTxf" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jComboBox4" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jComboBox3" alignment="0" pref="167" max="32767" attributes="0"/>
-                                          <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="raceCbx" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="languageCbx" alignment="0" pref="167" max="32767" attributes="0"/>
+                                          <Component id="genderCbx" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextField1" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                      <Component id="zipTxf" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
                               </Group>
@@ -248,19 +248,19 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="genderLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="genderCbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="starLbl10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="langLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="languageCbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="starLbl11" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="raceLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="raceCbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="starLbl12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -274,7 +274,7 @@
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="zipLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="zipTxf" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="starLbl14" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="17" pref="55" max="32767" attributes="0"/>
@@ -282,8 +282,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nextBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -453,7 +453,7 @@
             <Property name="text" type="java.lang.String" value="*"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="genderCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -466,7 +466,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JComboBox" name="languageCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="9">
@@ -486,7 +486,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox4">
+        <Component class="javax.swing.JComboBox" name="raceCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
@@ -580,17 +580,20 @@
         </Component>
         <Component class="javax.swing.JTextField" name="hNumTxf">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="backBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="nextBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Next"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextBtnActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="zipTxf">
         </Component>
         <Component class="javax.swing.JLabel" name="starLbl14">
           <Properties>
