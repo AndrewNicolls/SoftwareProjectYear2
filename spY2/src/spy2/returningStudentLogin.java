@@ -112,6 +112,7 @@ public class returningStudentLogin extends javax.swing.JFrame {
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
         if (evt.getSource() == loginBtn) {
+            
             Connection connection;
             PreparedStatement ps;
             String sqlStatement = "SELECT * FROM `student` WHERE `idStudent`=? AND `IDnum`=?" ;
