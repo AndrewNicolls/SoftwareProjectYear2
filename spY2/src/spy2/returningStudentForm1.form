@@ -94,7 +94,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" pref="732" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -402,9 +405,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="idNumTxf">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idNumTxfActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="starLbl4">
           <Properties>
@@ -478,9 +478,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cNumTxf">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cNumTxfActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="starLbl10">
           <Properties>
@@ -514,9 +511,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="resAddrTxf2">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resAddrTxf2ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="idNumLbl">
           <Properties>
@@ -578,6 +572,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Next"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="languageLbl">
           <Properties>
@@ -649,9 +646,6 @@
               </StringArray>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="raceCbxActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -676,9 +670,6 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="firstnameTxf">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="firstnameTxfActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="surnameTxf">
         </Component>

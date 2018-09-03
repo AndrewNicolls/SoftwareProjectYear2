@@ -5,6 +5,16 @@
  */
 package spy2;
 
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Andrew
@@ -29,11 +39,11 @@ public class returningStudentLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        SNumber = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        IDnumber = new javax.swing.JTextField();
+        studentNumLbl = new javax.swing.JLabel();
+        studentNumTxf = new javax.swing.JTextField();
+        loginBtn = new javax.swing.JButton();
+        idNumLbl = new javax.swing.JLabel();
+        idNumTxf = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -46,16 +56,16 @@ public class returningStudentLogin extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Return Student Login", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        jLabel1.setText("Student Number");
+        studentNumLbl.setText("Student Number");
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("ID number");
+        idNumLbl.setText("ID number");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -64,16 +74,16 @@ public class returningStudentLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(studentNumLbl)
+                    .addComponent(idNumLbl))
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(IDnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(studentNumTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(idNumTxf))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addComponent(loginBtn)
                 .addGap(149, 149, 149))
         );
         jPanel1Layout.setVerticalGroup(
@@ -81,14 +91,14 @@ public class returningStudentLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(SNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                    .addComponent(studentNumLbl)
+                    .addComponent(studentNumTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(IDnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jButton1)
+                    .addComponent(idNumLbl)
+                    .addComponent(idNumTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(loginBtn)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
@@ -166,9 +176,33 @@ public class returningStudentLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+       if (evt.getSource() == loginBtn) {
+            
+            Connection connection;
+            PreparedStatement ps;
+            String sqlStatement = "SELECT * FROM `student` WHERE `idStudent`=? AND `IDnum`=?" ;
+            
+            try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+            ps = (PreparedStatement) connection.prepareStatement(sqlStatement); 
+            ps.setString(1, studentNumTxf.getText());
+            ps.setString(2, String.valueOf(idNumTxf.getPassword()));
+            ResultSet result = ps.executeQuery();
+             if(result.next()){
+                //TODO this will call the admin frame with the table to browse student information and search
+                JOptionPane.showMessageDialog(rootPane, "Correct Login");//This is temporary to simply show it is correctly identifying login matches
+            }
+            else{
+                final JPanel panel = new JPanel();
+                JOptionPane.showMessageDialog(panel, "Incorrect Student Number and passport/ID number combination", "Login credential missmatch", JOptionPane.ERROR_MESSAGE);
+            }
+            } catch (SQLException ex) {
+                Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,11 +240,8 @@ public class returningStudentLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField IDnumber;
-    private javax.swing.JTextField SNumber;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel idNumLbl;
+    private javax.swing.JPasswordField idNumTxf;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -218,5 +249,8 @@ public class returningStudentLogin extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JLabel studentNumLbl;
+    private javax.swing.JTextField studentNumTxf;
     // End of variables declaration//GEN-END:variables
 }

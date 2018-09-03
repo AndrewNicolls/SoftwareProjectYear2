@@ -155,12 +155,6 @@ public class newStudentForm2 extends javax.swing.JFrame {
         starLbl12.setForeground(new java.awt.Color(255, 51, 0));
         starLbl12.setText("*");
 
-        zipPostTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zipPostTxfActionPerformed(evt);
-            }
-        });
-
         backBtn.setText("Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -410,8 +404,8 @@ public class newStudentForm2 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -433,10 +427,6 @@ public class newStudentForm2 extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void zipPostTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zipPostTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_zipPostTxfActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
       setVisible(false);

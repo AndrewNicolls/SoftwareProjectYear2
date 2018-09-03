@@ -92,12 +92,6 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         starLbl2.setForeground(new java.awt.Color(255, 0, 0));
         starLbl2.setText(" *");
 
-        idNumTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idNumTxfActionPerformed(evt);
-            }
-        });
-
         starLbl4.setForeground(new java.awt.Color(255, 0, 0));
         starLbl4.setText(" *");
 
@@ -124,12 +118,6 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         starLbl9.setForeground(new java.awt.Color(255, 0, 0));
         starLbl9.setText(" *");
 
-        cNumTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cNumTxfActionPerformed(evt);
-            }
-        });
-
         starLbl10.setForeground(new java.awt.Color(255, 0, 0));
         starLbl10.setText(" *");
 
@@ -141,12 +129,6 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         firstnameLbl.setText("Firstname");
 
         surnameLbl.setText("Surname");
-
-        resAddrTxf2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resAddrTxf2ActionPerformed(evt);
-            }
-        });
 
         idNumLbl.setText("ID Number");
 
@@ -173,6 +155,11 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         zipLbl.setText("Area code");
 
         nextBtn.setText("Next");
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
 
         languageLbl.setText("Home Language");
 
@@ -189,21 +176,10 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         hNumLbl.setText("Home number");
 
         raceCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Black", "White", "Coloured", "Indian", "Asian", "other" }));
-        raceCbx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                raceCbxActionPerformed(evt);
-            }
-        });
 
         resAddrLbl.setText("Residential address");
 
         courseCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bsc IT", "Bcomm Law", "Ba Psych" }));
-
-        firstnameTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstnameTxfActionPerformed(evt);
-            }
-        });
 
         reminderLbl.setForeground(new java.awt.Color(255, 0, 0));
         reminderLbl.setText("Please ensure all information below is correct");
@@ -469,7 +445,9 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -492,31 +470,15 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void firstnameTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstnameTxfActionPerformed
-
-    private void idNumTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idNumTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idNumTxfActionPerformed
-
-    private void raceCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raceCbxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_raceCbxActionPerformed
-
-    private void cNumTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNumTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cNumTxfActionPerformed
-
-    private void resAddrTxf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resAddrTxf2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resAddrTxf2ActionPerformed
-
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         setVisible(false);
         greetFrame object=new greetFrame();
         object.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
+
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nextBtnActionPerformed
 
     /**
      * @param args the command line arguments

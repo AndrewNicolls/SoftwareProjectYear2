@@ -112,12 +112,6 @@ public class returningStudentForm2 extends javax.swing.JFrame {
 
         postZipLbl.setText("Area code");
 
-        firstnameTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstnameTxfActionPerformed(evt);
-            }
-        });
-
         starLbl1.setForeground(new java.awt.Color(255, 0, 0));
         starLbl1.setText(" *");
 
@@ -162,12 +156,6 @@ public class returningStudentForm2 extends javax.swing.JFrame {
         postAddTxf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postAddTxf2ActionPerformed(evt);
-            }
-        });
-
-        postZipTxf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                postZipTxfActionPerformed(evt);
             }
         });
 
@@ -439,17 +427,9 @@ public class returningStudentForm2 extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void firstnameTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstnameTxfActionPerformed
-
     private void postAddTxf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postAddTxf2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_postAddTxf2ActionPerformed
-
-    private void postZipTxfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postZipTxfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_postZipTxfActionPerformed
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
         setVisible(false);
