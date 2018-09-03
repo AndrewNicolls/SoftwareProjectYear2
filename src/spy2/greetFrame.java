@@ -37,7 +37,7 @@ public class greetFrame extends javax.swing.JFrame {
 
         usrChsCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrator", "Returning Student", "New Student" }));
 
-        greetOkBtn.setText("OK");
+        greetOkBtn.setText("ENTER");
         greetOkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 greetOkBtnActionPerformed(evt);
