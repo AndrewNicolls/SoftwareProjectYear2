@@ -16,13 +16,12 @@ import java.util.logging.Logger;
  *
  * @author Andrew
  */
-public class returningStudentForm1 extends javax.swing.JFrame {
+public class adminEditScreen extends javax.swing.JFrame {
 
     /**
-     * Creates new form returningStudentForm1
+     * Creates new form adminEditScreen
      */
-    public returningStudentForm1() {
-        super("Returning Student");
+    public adminEditScreen() {
         initComponents();
     }
 
@@ -35,7 +34,6 @@ public class returningStudentForm1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nationalityBtnGrp = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         starLbl3 = new javax.swing.JLabel();
         starLbl2 = new javax.swing.JLabel();
@@ -67,7 +65,7 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         backBtn = new javax.swing.JButton();
         genderLbl = new javax.swing.JLabel();
         zipLbl = new javax.swing.JLabel();
-        nextBtn = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
         languageLbl = new javax.swing.JLabel();
         zipTxf = new javax.swing.JTextField();
         raceLbl = new javax.swing.JLabel();
@@ -85,12 +83,10 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         dateRegistrationLbl = new javax.swing.JLabel();
         dateRegistrationTxf = new javax.swing.JTextField();
         starLbl14 = new javax.swing.JLabel();
+        deleteBtn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,13 +109,11 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         starLbl5.setForeground(new java.awt.Color(255, 0, 0));
         starLbl5.setText(" *");
 
-        nationalityBtnGrp.add(lclBtn);
         lclBtn.setText("Local Resident");
 
         starLbl7.setForeground(new java.awt.Color(255, 0, 0));
         starLbl7.setText(" *");
 
-        nationalityBtnGrp.add(intBtn);
         intBtn.setText("International");
 
         starLbl8.setForeground(new java.awt.Color(255, 0, 0));
@@ -164,10 +158,10 @@ public class returningStudentForm1 extends javax.swing.JFrame {
 
         zipLbl.setText("Area code");
 
-        nextBtn.setText("Next");
-        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextBtnActionPerformed(evt);
+                updateBtnActionPerformed(evt);
             }
         });
 
@@ -199,6 +193,13 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         starLbl14.setForeground(new java.awt.Color(255, 0, 0));
         starLbl14.setText("*");
 
+        deleteBtn.setText("Delete");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -206,11 +207,6 @@ public class returningStudentForm1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(backBtn)
-                        .addGap(30, 30, 30)
-                        .addComponent(nextBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -242,10 +238,10 @@ public class returningStudentForm1 extends javax.swing.JFrame {
                                             .addComponent(dobTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                             .addComponent(languageCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(raceCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(emailTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(cNumTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(hNumTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(idNumTxf, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                            .addComponent(emailTxf)
+                                            .addComponent(cNumTxf)
+                                            .addComponent(hNumTxf)
+                                            .addComponent(idNumTxf)
                                             .addComponent(dateRegistrationTxf)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(7, 7, 7)
@@ -255,8 +251,16 @@ public class returningStudentForm1 extends javax.swing.JFrame {
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(zipTxf, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(resAddrTxf1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 0, Short.MAX_VALUE)))))))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                                                .addGap(0, 70, Short.MAX_VALUE)))))))
+                        .addContainerGap(107, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(backBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateBtn)
+                        .addGap(48, 48, 48))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -414,47 +418,16 @@ public class returningStudentForm1 extends javax.swing.JFrame {
                     .addComponent(zipTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nextBtn)
-                    .addComponent(backBtn))
+                    .addComponent(updateBtn)
+                    .addComponent(backBtn)
+                    .addComponent(deleteBtn))
                 .addGap(50, 50, 50))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         jMenu1.setText("File");
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Home");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("LogOut");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("About");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem3);
-
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -463,7 +436,7 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,59 +448,65 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-        greetFrame object=new greetFrame();
-        object.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         setVisible(false);
         greetFrame object=new greetFrame();
         object.setVisible(true);
     }//GEN-LAST:event_backBtnActionPerformed
-  
-    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-        if(evt.getSource()==nextBtn)
+  private String getNationality()
+    {
+        String nationality;
+            if(lclBtn.isSelected())
+            {
+               nationality="South African"; 
+            }
+            else
+            {
+               nationality="Foreign";
+            }
+            return nationality;
+    }
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        if(evt.getSource()==updateBtn)
         {
-            
+            String nationality = getNationality();
             String course = (String) courseCbx.getSelectedItem();
             String firstName = firstnameTxf.getText();
             String surname = surnameTxf.getText();
-            String homeNum = hNumTxf.getText();
-            String cellNum = cNumTxf.getText();
-            String email = emailTxf.getText();
+            String dateRegistration = dateRegistrationTxf.getText();
             String idNum = idNumTxf.getText();
+            String dateBirth = dobTxf.getText();
             String gender = (String) genderCbx.getSelectedItem();
             String language = (String) languageCbx.getSelectedItem();
+            String race = (String) raceCbx.getSelectedItem();
+            String email = emailTxf.getText();
+            String cellNum = cNumTxf.getText();
+            String homeNum = hNumTxf.getText();
             String resAddress = resAddrTxf1.getText()+""+resAddrTxf2.getText();
             String zip = zipTxf.getText();
+                                               
             Connection connection;
-           try{
-             connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
-             Statement st = connection.createStatement();
-             
-            st.executeUpdate("UPDATE `student` SET(`firstName`='"+firstName+"',`lastName`='"+surname+"'"
-                     + ",`homeNum'="+homeNum+"'`,`zip`='"+zip+"',`email`='"+email+"',`gender`='"+gender+"'"
-                     + ",`cellNum`='"+cellNum+"',`resAddress`='"+resAddress+"',`course`='"+course+"', `homeLang`='"+language+"')"
-                     + "WHERE IDnum='"+idNum+"'");                 
-                    
-           }catch(SQLException ex){
-               Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
-           }
+            try{
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+                Statement st = connection.createStatement();
+
+                st.executeUpdate("UPDATE `student` SET(`firstName`='"+firstName+"',`lastName`='"+surname+"'"
+                    + ",`dateBirth`='"+dateBirth+",`nationality`='"+nationality+"',`IDnum`='"+idNum+"',`homeNum'="+homeNum+"'`,`zip`='"+zip+"',`email`='"+email+"',`gender`='"+gender+"'"
+                    + ",`cellNum`='"+cellNum+"',`resAddress`='"+resAddress+"',`course`='"+course+"',`race`='"+race+"',`dateRegistration`='"+dateRegistration+"' `homeLang`='"+language+"')"
+                    + "WHERE IDnum='"+idNum+"'");
+
+            }catch(SQLException ex){
+                Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-    }//GEN-LAST:event_nextBtnActionPerformed
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        if (evt.getSource()==deleteBtn)
+        {
+            
+        }
+    }//GEN-LAST:event_deleteBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -546,20 +525,20 @@ public class returningStudentForm1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(returningStudentForm1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminEditScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(returningStudentForm1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminEditScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(returningStudentForm1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminEditScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(returningStudentForm1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adminEditScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new returningStudentForm1().setVisible(true);
+                new adminEditScreen().setVisible(true);
             }
         });
     }
@@ -572,6 +551,7 @@ public class returningStudentForm1 extends javax.swing.JFrame {
     private javax.swing.JLabel courseLbl;
     private javax.swing.JLabel dateRegistrationLbl;
     private javax.swing.JTextField dateRegistrationTxf;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel dobLbl;
     private javax.swing.JTextField dobTxf;
     private javax.swing.JLabel emailLbl;
@@ -588,15 +568,10 @@ public class returningStudentForm1 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> languageCbx;
     private javax.swing.JLabel languageLbl;
     private javax.swing.JRadioButton lclBtn;
-    private javax.swing.ButtonGroup nationalityBtnGrp;
-    private javax.swing.JButton nextBtn;
     private javax.swing.JComboBox<String> raceCbx;
     private javax.swing.JLabel raceLbl;
     private javax.swing.JLabel reminderLbl;
@@ -619,6 +594,7 @@ public class returningStudentForm1 extends javax.swing.JFrame {
     private javax.swing.JLabel starLbl9;
     private javax.swing.JLabel surnameLbl;
     private javax.swing.JTextField surnameTxf;
+    private javax.swing.JButton updateBtn;
     private javax.swing.JLabel zipLbl;
     private javax.swing.JTextField zipTxf;
     // End of variables declaration//GEN-END:variables

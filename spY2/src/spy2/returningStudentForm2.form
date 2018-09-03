@@ -88,16 +88,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -118,117 +120,119 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="starLbl12" min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="firstnameLbl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="reminderLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="starLbl2" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="sponsorTitleLbl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="starLbl1" min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="firstnameLbl" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="reminderLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="starLbl2" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="sponsorTitleLbl" min="-2" max="-2" attributes="0"/>
+                                  <Component id="initialsLbl" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="starLbl1" min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Component id="starLbl4" min="-2" pref="15" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="initialsLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="starLbl4" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="surnameLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl3" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="idNumLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl5" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="mariStatLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl6" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="emailAddLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="starLbl7" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="cNumLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl8" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="hNumLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl9" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="emailAddTxf" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="surnameTxf" pref="200" max="32767" attributes="0"/>
-                                          <Component id="initialsTxf" max="32767" attributes="0"/>
-                                          <Component id="firstnameTxf" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="sponsorTitleTxf" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="idNumTxf" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="mariStatCbx" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="cNumTxf" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <Component id="hNumTxf" min="-2" pref="200" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="surnameLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl3" min="-2" pref="15" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="resAddLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl10" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="resZipLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          <Component id="starLbl11" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="postAddLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="postZipLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="starLbl13" min="-2" pref="15" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Component id="idNumLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl5" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="mariStatLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl6" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="emailAddLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="starLbl7" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cNumLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl8" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="hNumLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl9" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="emailTxf" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="surnameTxf" pref="200" max="32767" attributes="0"/>
+                                  <Component id="initialsTxf" max="32767" attributes="0"/>
+                                  <Component id="firstNameTxf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="sponsorTitleTxf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="idNumTxf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="maritalCbx" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="cNumTxf" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="hNumTxf" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="resAddLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl10" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="resZipLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="starLbl11" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="postAddLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl12" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="postZipLbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="starLbl13" min="-2" pref="15" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="postZipTxf" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="backBtn" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                          <Component id="nextBtn" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="resZipTxf" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="resAddTxf2" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="resAddTxf1" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="postAddTxf1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="postAddTxf2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace type="separate" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="resZipTxf" min="-2" pref="80" max="-2" attributes="0"/>
-                                              <Component id="resAddTxf2" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="resAddTxf1" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="postAddTxf2" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                              <Component id="postZipTxf" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="backBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  <Component id="nextBtn" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -258,7 +262,7 @@
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="firstnameLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="firstnameTxf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="firstNameTxf" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="starLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -282,14 +286,14 @@
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="mariStatLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="mariStatCbx" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="maritalCbx" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="starLbl6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="emailAddLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="starLbl7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="emailAddTxf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="emailTxf" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -323,20 +327,30 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="postAddLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="starLbl12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="postAddTxf2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="postAddTxf1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="postZipLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="starLbl13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="postZipTxf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="postAddTxf2" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="postZipLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="starLbl13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="postZipTxf" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="11" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nextBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nextBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -417,7 +431,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="sponsorTitleTxf">
         </Component>
-        <Component class="javax.swing.JTextField" name="firstnameTxf">
+        <Component class="javax.swing.JTextField" name="firstNameTxf">
         </Component>
         <Component class="javax.swing.JTextField" name="surnameTxf">
         </Component>
@@ -527,11 +541,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="initialsTxf">
         </Component>
-        <Component class="javax.swing.JTextField" name="emailAddTxf">
+        <Component class="javax.swing.JTextField" name="emailTxf">
         </Component>
         <Component class="javax.swing.JTextField" name="cNumTxf">
         </Component>
-        <Component class="javax.swing.JComboBox" name="mariStatCbx">
+        <Component class="javax.swing.JComboBox" name="maritalCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -556,9 +570,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="resZipTxf">
         </Component>
-        <Component class="javax.swing.JTextField" name="postAddTxf2">
+        <Component class="javax.swing.JTextField" name="postAddTxf1">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="postAddTxf2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="postAddTxf1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="postZipTxf">
@@ -577,6 +591,11 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextBtnActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="postAddTxf2">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="postAddTxf2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
