@@ -121,6 +121,7 @@ public class adminLoginFrame extends javax.swing.JFrame {
             ResultSet result = ps.executeQuery();
              if(result.next()){
                 //TODO this will call the admin frame with the table to browse student information and search
+              
                 JOptionPane.showMessageDialog(rootPane, "Correct Login");//This is temporary to simply show it is correctly identifying login matches
             }
             else{
