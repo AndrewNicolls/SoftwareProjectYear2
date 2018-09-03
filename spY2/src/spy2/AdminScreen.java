@@ -75,6 +75,11 @@ add(js);
         jButton2.setText("Back");
 
         jButton3.setText("Update");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AdminPnlLayout = new javax.swing.GroupLayout(AdminPnl);
         AdminPnl.setLayout(AdminPnlLayout);
@@ -130,6 +135,10 @@ add(js);
     private void txfSeachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfSeachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txfSeachActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
