@@ -152,7 +152,7 @@
                                   <Component id="starLbl7" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="cellNumLbl" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cNumLbl" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="starLbl8" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
@@ -285,7 +285,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cellNumLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cNumLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="cNumTxf" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="starLbl8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -484,7 +484,7 @@
             <Property name="text" type="java.lang.String" value="Email address"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="cellNumLbl">
+        <Component class="javax.swing.JLabel" name="cNumLbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cellphone number"/>
           </Properties>

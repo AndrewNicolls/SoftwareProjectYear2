@@ -6,7 +6,12 @@
 package spy2;
 
 import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -52,7 +57,7 @@ public class newStudentForm2 extends javax.swing.JFrame {
         idNumLbl = new javax.swing.JLabel();
         maritLbl = new javax.swing.JLabel();
         emailLbl = new javax.swing.JLabel();
-        cellNumLbl = new javax.swing.JLabel();
+        cNumLbl = new javax.swing.JLabel();
         hNumLbl = new javax.swing.JLabel();
         resLbl = new javax.swing.JLabel();
         titleTxf = new javax.swing.JTextField();
@@ -140,7 +145,7 @@ public class newStudentForm2 extends javax.swing.JFrame {
 
         emailLbl.setText("Email address");
 
-        cellNumLbl.setText("Cellphone number");
+        cNumLbl.setText("Cellphone number");
 
         hNumLbl.setText("Home number");
 
@@ -206,7 +211,7 @@ public class newStudentForm2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(starLbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cellNumLbl)
+                                .addComponent(cNumLbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(starLbl8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -310,7 +315,7 @@ public class newStudentForm2 extends javax.swing.JFrame {
                     .addComponent(emailTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cellNumLbl)
+                    .addComponent(cNumLbl)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cNumTxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(starLbl8)))
@@ -435,28 +440,39 @@ public class newStudentForm2 extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
-       try{
-            
-            String Firstname=fNameTxf.getText();
-            String Initial=initialTxf.getText();
-            String surname=sNameTxf.getText();
-            String Title=titleTxf.getText();
-            String HomeNumber=hNumTxf.getText();
-            String email=emailTxf.getText();
-            
-            String address=postTxf1.getText();
-            int Areacode=Integer.parseInt(zipPostTxf.getText());
-            
-            int cellNumber=Integer.parseInt(cNumTxf.getText());
-            
- 
-            JOptionPane.showMessageDialog(null,"Data is successfully inserted");
-        }catch(HeadlessException e){
-            JOptionPane.showMessageDialog(null,e);
-        }
+      if(evt.getSource()==nextBtn)
+      {
+         String firstName=fNameTxf.getText();
+         String initials=initialTxf.getText();
+         String surname=sNameTxf.getText();
+         String sponsorTitle=titleTxf.getText();
+         String homeNum=hNumTxf.getText();
+         String email=emailTxf.getText(); 
+         String maritalStatus = (String) maritalCbx.getSelectedItem();
+         String cellNum = cNumTxf.getText();
+         String resAddress = resTxf1.getText()+resTxf2.getText();
+         String resZip = zipResTxf.getText();
+         String postAddress = postTxf1.getText()+postTxf2.getText();
+         String postZip = zipPostTxf.getText();
+         String idNum = idNumTxf.getText();
+      
+       Connection connection;
+           try{
+             connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+             Statement st = connection.createStatement();
+             
+            st.executeUpdate("INSERT INTO `sponsor`(`Title`,`Name`,`Surname`"
+                     + ",`Initials`,`idNum`,`maritalStatus`,`email`,`cellNum`,`homeNum`,`resAddress`,"
+                     + "`resZip`,`postAddress`,`postZip`)"
+                     + "values('"+sponsorTitle+"','"+firstName+"','"+surname+"','"+initials+"','"+idNum+"','"+maritalStatus+"','"+email+"','"+cellNum+"','"+homeNum+"','"+resAddress+"','"+cellNum+"','"+resAddress+"','"+resZip+"','"+postAddress+"','"+postZip+"')");                 
+                    
+           }catch(SQLException ex){
+               Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+           }
         setVisible(false);
         finishScreen object=new finishScreen();
         object.setVisible(true);
+      }
     }//GEN-LAST:event_nextBtnActionPerformed
 
     /**
@@ -496,8 +512,8 @@ public class newStudentForm2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JLabel cNumLbl;
     private javax.swing.JTextField cNumTxf;
-    private javax.swing.JLabel cellNumLbl;
     private javax.swing.JLabel emailLbl;
     private javax.swing.JTextField emailTxf;
     private javax.swing.JTextField fNameTxf;
