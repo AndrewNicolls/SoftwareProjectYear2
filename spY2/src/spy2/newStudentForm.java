@@ -513,12 +513,11 @@ public class newStudentForm extends javax.swing.JFrame {
            try{
              connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
              Statement st = connection.createStatement();
-             //The database needs to be updated with these other variables such as home number and date of registration
-            // st.executeUpdate("INSERT INTO `student`(`idStudent`,`firstName`,`lastName`"
-                   //  + ",`DOB`,`phoneNumber`,`zip`,`email`,`gender`,`nationality`,`IDnum`,"
-                    // + "`race`,`cellNum`,`resAddress`,`course`,`homeLang`,`Sponsor_idSponsor`)"
-                    // + "values('NEEDTOGENERATEIDHERE','"+firstName+"','"+surname+"','"+dateOfBirth+"','"+cellNum+"')");
-                    
+             
+            st.executeUpdate("INSERT INTO `student`(`idStudent`,`firstName`,`lastName`"
+                     + ",`dateBirth`,`homeNum`,`zip`,`email`,`gender`,`nationality`,`IDnum`,"
+                     + "`race`,`cellNum`,`resAddress`,`course`,`homeLang`,`dateRegistration`)"
+                     + "values('NEEDTOGENERATEIDHERE','"+firstName+"','"+surname+"','"+dateOfBirth+"','"+homeNum+"','"+zip+"','"+email+"','"+gender+"','"+nationality+"','"+idNum+"','"+race+"','"+cellNum+"','"+resAddress+"','"+course+"','"+language+"','"+dateOfReg+"')");                 
                     
            }catch(SQLException ex){
                Logger.getLogger(adminLoginFrame.class.getName()).log(Level.SEVERE, null, ex);
