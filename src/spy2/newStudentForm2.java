@@ -72,7 +72,7 @@ public class newStudentForm2 extends javax.swing.JFrame {
         zipPostTxf = new javax.swing.JTextField();
         backBtn = new javax.swing.JButton();
         nextBtn = new javax.swing.JButton();
-        maritalCbx = new javax.swing.JComboBox<>();
+        maritalCbx = new javax.swing.JComboBox<String>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,10 +147,15 @@ public class newStudentForm2 extends javax.swing.JFrame {
         starLbl12.setText("*");
 
         backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         nextBtn.setText("Next");
 
-        maritalCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Married", "Single", "Divorced", "Widowed" }));
+        maritalCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Married", "Single", "Divorced", "Widowed" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -358,6 +363,12 @@ public class newStudentForm2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+        new newStudentForm().setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
