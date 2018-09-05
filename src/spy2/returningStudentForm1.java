@@ -65,13 +65,13 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         zipTxf = new javax.swing.JTextField();
         raceLbl = new javax.swing.JLabel();
         emailLbl = new javax.swing.JLabel();
-        genderCbx = new javax.swing.JComboBox<>();
+        genderCbx = new javax.swing.JComboBox<String>();
         cNumLbl = new javax.swing.JLabel();
-        languageCbx = new javax.swing.JComboBox<>();
+        languageCbx = new javax.swing.JComboBox<String>();
         hNumLbl = new javax.swing.JLabel();
-        raceCbx = new javax.swing.JComboBox<>();
+        raceCbx = new javax.swing.JComboBox<String>();
         resAddrLbl = new javax.swing.JLabel();
-        courseCbx = new javax.swing.JComboBox<>();
+        courseCbx = new javax.swing.JComboBox<String>();
         firstnameTxf = new javax.swing.JTextField();
         surnameTxf = new javax.swing.JTextField();
         reminderLbl = new javax.swing.JLabel();
@@ -138,6 +138,11 @@ public class returningStudentForm1 extends javax.swing.JFrame {
         starLbl1.setText(" *");
 
         backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         genderLbl.setText("Gender");
 
@@ -151,19 +156,19 @@ public class returningStudentForm1 extends javax.swing.JFrame {
 
         emailLbl.setText("Email address");
 
-        genderCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        genderCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
 
         cNumLbl.setText("Cell number");
 
-        languageCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "English", "isiXhosa", "Afrikaans", "Zulu", "French", "Portugese" }));
+        languageCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "English", "isiXhosa", "Afrikaans", "Zulu", "French", "Portugese" }));
 
         hNumLbl.setText("Home number");
 
-        raceCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Black", "White", "Coloured", "Indian", "Asian", "other" }));
+        raceCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Black", "White", "Coloured", "Indian", "Asian", "other" }));
 
         resAddrLbl.setText("Residential address");
 
-        courseCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bsc IT", "Bcomm Law", "Ba Psych" }));
+        courseCbx.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bsc IT", "Bcomm Law", "Ba Psych" }));
 
         reminderLbl.setForeground(new java.awt.Color(255, 0, 0));
         reminderLbl.setText("Please ensure all information below is correct");
@@ -364,6 +369,12 @@ public class returningStudentForm1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+          new greetFrame().setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
