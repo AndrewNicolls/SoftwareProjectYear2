@@ -114,14 +114,17 @@ public class adminLoginFrame extends javax.swing.JFrame {
             String sqlStatement = "SELECT * FROM `administrator` WHERE `idAdministrator`=? AND `password`=?" ;
             
             try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/ease", "root", "");  
             ps = (PreparedStatement) connection.prepareStatement(sqlStatement); 
             ps.setString(1, empIDTxf.getText());
             ps.setString(2, String.valueOf(passwordTxf.getPassword()));
             ResultSet result = ps.executeQuery();
              if(result.next()){
-                //TODO this will call the admin frame with the table to browse student information and search
-                JOptionPane.showMessageDialog(rootPane, "Correct Login");//This is temporary to simply show it is correctly identifying login matches
+                
+                //this will call the admin frame with the table to browse student information and search
+                
+                 new AdminScreen().setVisible(true);
+                
             }
             else{
                 final JPanel panel = new JPanel();
