@@ -18,7 +18,7 @@ public class AdminScreen extends javax.swing.JFrame {
     public AdminScreen() {
         this.js = new JScrollPane(AdminStudentTbl);
         js.setVisible(true);
-add(js);
+    add(js);
         initComponents();
         
     }
@@ -31,14 +31,18 @@ add(js);
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("ease?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        studentQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT s FROM Student s");
+        studentList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : studentQuery.getResultList();
         AdminPnl = new javax.swing.JPanel();
         txfSeach = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AdminStudentTbl = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,33 +52,36 @@ add(js);
             }
         });
 
-        jButton1.setText("Search");
+        btnSearch.setText("Search");
 
-        AdminStudentTbl.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, studentList, AdminStudentTbl);
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${idStudent}"));
+        columnBinding.setColumnName("Id Student");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${firstName}"));
+        columnBinding.setColumnName("First Name");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${lastName}"));
+        columnBinding.setColumnName("Last Name");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${course}"));
+        columnBinding.setColumnName("Course");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${email}"));
+        columnBinding.setColumnName("Email");
+        columnBinding.setColumnClass(String.class);
+        bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
         jScrollPane1.setViewportView(AdminStudentTbl);
 
-        jButton2.setText("Back");
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Update");
+        btnUpdate.setText("Update");
 
         javax.swing.GroupLayout AdminPnlLayout = new javax.swing.GroupLayout(AdminPnl);
         AdminPnl.setLayout(AdminPnlLayout);
@@ -83,18 +90,18 @@ add(js);
             .addGroup(AdminPnlLayout.createSequentialGroup()
                 .addGroup(AdminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdminPnlLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3))
-                    .addGroup(AdminPnlLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(AdminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AdminPnlLayout.createSequentialGroup()
                                 .addComponent(txfSeach, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(jButton1)))))
+                                .addComponent(btnSearch))))
+                    .addGroup(AdminPnlLayout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(btnBack)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdate)))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         AdminPnlLayout.setVerticalGroup(
@@ -103,13 +110,13 @@ add(js);
                 .addGap(28, 28, 28)
                 .addGroup(AdminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txfSeach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(AdminPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnBack)
+                    .addComponent(btnUpdate))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
@@ -124,12 +131,20 @@ add(js);
             .addComponent(AdminPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txfSeachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfSeachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txfSeachActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        new greetFrame().setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,10 +184,14 @@ add(js);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPnl;
     private javax.swing.JTable AdminStudentTbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnUpdate;
+    private javax.persistence.EntityManager entityManager;
     private javax.swing.JScrollPane jScrollPane1;
+    private java.util.List<spy2.Student> studentList;
+    private javax.persistence.Query studentQuery;
     private javax.swing.JTextField txfSeach;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
